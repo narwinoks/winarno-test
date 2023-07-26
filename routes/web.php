@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return  to_route('auth.login');
 });
 
 // check number route
@@ -31,7 +31,7 @@ Route::prefix('/check-number')->name('checkNumber.')->group(function () {
 // auth route
 Route::prefix('/auth')->name('auth.')->group(function () {
     Route::controller(AuthController::class)->group(function () {
-        Route::get('/login', 'index')->name('login');
+        Route::get('/login', 'index')->name('login')->middleware('guest');
         Route::post('/login', 'login')->name('login');
         Route::delete('/logout', 'logout')->name('logout');
     });
