@@ -45,14 +45,14 @@
                                                 account.</h5>
                                             <form class="forms-sample">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Email address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                                        placeholder="Email">
+                                                    <label for="username">Username</label>
+                                                    <input type="text" class="form-control" id="username"
+                                                        placeholder="Username" name="username">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="exampleInputPassword1">Password</label>
-                                                    <input type="password" class="form-control"
-                                                        id="exampleInputPassword1" autocomplete="current-password"
+                                                    <label for="password">Password</label>
+                                                    <input type="password" class="form-control" id="password"
+                                                        name="password" autocomplete="current-password"
                                                         placeholder="Password">
                                                 </div>
 
@@ -81,6 +81,8 @@
     <!-- inject:js -->
     <script src="{{ asset('assets/vendors/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/js/template.js') }}"></script>
+    <script src="{{ asset('assets/vendors/bs-notify/bs-notify.min.js') }}"></script>
+    @include('templates.alert')
     <!-- endinject -->
     <!-- custom js for this page -->
     <!-- end custom js for this page -->
