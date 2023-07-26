@@ -33,12 +33,12 @@ Route::prefix('/auth')->name('auth.')->group(function () {
     Route::controller(AuthController::class)->group(function () {
         Route::get('/login', 'index')->name('login')->middleware('guest');
         Route::post('/login', 'login')->name('login');
-        Route::delete('/logout', 'logout')->name('logout');
+        Route::delete('/logout', 'logout')->name('logout')->middleware('auth');
     });
 });
 
 // dashboard route
-Route::prefix('/dashboard')->name('dashboard.')->group(function () {
+Route::middleware('auth')->prefix('/dashboard')->name('dashboard.')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/', 'index')->name('index');
     });
