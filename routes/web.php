@@ -33,6 +33,7 @@ Route::prefix('/auth')->name('auth.')->group(function () {
     Route::controller(AuthController::class)->group(function () {
         Route::get('/login', 'index')->name('login');
         Route::post('/login', 'login')->name('login');
+        Route::delete('/logout', 'logout')->name('logout');
     });
 });
 

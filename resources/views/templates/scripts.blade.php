@@ -17,6 +17,8 @@
 <script src="{{ asset('assets/js/dashboard.js') }} "></script>
 <script src="{{ asset('assets/js/datepicker.js') }} "></script>
 <!-- end custom js for this page -->
+
+@stack('scripts')
 </body>
 
 </html>
